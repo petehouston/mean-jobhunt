@@ -1,0 +1,10 @@
+.idea/
+*.iml
+node_modules/
+.DS_Store
+.vscode/
+*.code-workspace
+.project
+.classpath
+.env
+Thumbs.db
