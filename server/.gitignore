@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+.DS_Store
+.env
