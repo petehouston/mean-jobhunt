@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const { STATUS_SUCCESS, STATUS_ERROR, SECRET_KEY } = require('../common/constants');
 
 
-const registerController = (req, res, next) => {
+function registerController (req, res, next) {
     userModel.create({
         name: req.body.name,
         email: req.body.email,
@@ -23,10 +23,17 @@ const registerController = (req, res, next) => {
     })
 };
 
-const loginController = (req, res, next) => {
+function loginController (req, res, next) {
     userModel.findOne({ email: req.body.email }, (err, user) => {
-        if (err || user == null) {
+        if (err) {
             next(err);
+        } else if (user == null) {
+            res.status(404).json({
+                status: STATUS_ERROR,
+                payload: {
+                    message: 'user not found'
+                }
+            });
         } else {
             if (bcrypt.compareSync(req.body.password, user.password)) {
                 const token = jwt.sign({ id: user._id }, req.app.get(SECRET_KEY), { expiresIn: '24h' });

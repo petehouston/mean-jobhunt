@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("./config/database");
+const authRouter = require('./routes/auth.api');
 const { SECRET_KEY, STATUS_ERROR } = require('./common/constants');
 
 // Start database connection
@@ -11,7 +12,7 @@ const app = express();
 /////////////////////////////////////////
 // CONFIG
 /////////////////////////////////////////
-app.set(SECRET_KEY, process.env.SECRET_KEY || '123123123qweqweqwe12312312');
+app.set(SECRET_KEY, process.env.SECRET_KEY || 'MeanJobHuntSecretKey');
 
 /////////////////////////////////////////
 // MIDDLEWARE
@@ -23,7 +24,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /////////////////////////////////////////
 // ROUTING
 /////////////////////////////////////////
-// TODO
+app.use('/auth', authRouter);
+
 
 /////////////////////////////////////////
 // ERROR HANDLER
