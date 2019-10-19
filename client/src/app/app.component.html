@@ -1,4 +1,15 @@
-<h1>App Layout Here</h1>
-
-<h2>Put children content below</h2>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>JobHunt</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/'">View Jobs </a>
+    </div>
+    <span class="menu-fill-remaining-space"></span>
+    <div>
+      <a mat-button [routerLink]="'/login'">Login</a>
+      <a mat-button [routerLink]="'/register'">Register</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>
