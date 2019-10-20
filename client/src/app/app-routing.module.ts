@@ -6,6 +6,7 @@ import {LoginPageComponent} from "./login-page/login-page.component";
 import {RegisterPageComponent} from "./register-page/register-page.component";
 import {JobListingPageComponent} from "./job-listing-page/job-listing-page.component";
 import {UserAddJobPageComponent} from "./user-add-job-page/user-add-job-page.component";
+import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'jobs', component: JobListingPageComponent },
+  { path: 'jobs/:job_id/application', component: ApplicantDetailsComponent },
 
   { path: 'u/jobs/add', component: UserAddJobPageComponent },
 

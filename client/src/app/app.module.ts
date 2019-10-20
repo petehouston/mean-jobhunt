@@ -13,6 +13,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { JobListingPageComponent } from './job-listing-page/job-listing-page.component';
 import { UserAddJobPageComponent } from './user-add-job-page/user-add-job-page.component';
 
+import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +23,14 @@ import { UserAddJobPageComponent } from './user-add-job-page/user-add-job-page.c
     LoginPageComponent,
     RegisterPageComponent,
     JobListingPageComponent,
-    UserAddJobPageComponent
+    UserAddJobPageComponent,
+    ApplicantDetailsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
