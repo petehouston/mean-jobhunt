@@ -23,10 +23,10 @@
         <ng-template #authNavbar class="navbar-collapse collapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">My Jobs</a>
+              <a class="nav-link" [routerLink]="['/', 'u', 'jobs']">My Jobs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Add Job</a>
+              <a class="nav-link" [routerLink]="['/', 'u', 'jobs', 'add']">Add Job</a>
             </li>
 <!--            <li class="nav-item">-->
 <!--              <a class="nav-git link" href="#">Profile</a>-->

@@ -11,6 +11,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import {JwtInterceptor} from './services/interceptors/jwt.interceptor';
 import {ReactiveFormsModule} from "@angular/forms";
 import { JobListingPageComponent } from './job-listing-page/job-listing-page.component';
+import { UserAddJobPageComponent } from './user-add-job-page/user-add-job-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { JobListingPageComponent } from './job-listing-page/job-listing-page.com
     NotFoundComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    JobListingPageComponent
+    JobListingPageComponent,
+    UserAddJobPageComponent
   ],
   imports: [
     BrowserModule,
