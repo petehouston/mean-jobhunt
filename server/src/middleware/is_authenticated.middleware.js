@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
                 if (err) {
                     next(err);
                 } else {
-                    req.body.authenticatedUser = user;
+                    req.body.authUser = user;
                     next();
                 }
             });
