@@ -73,8 +73,24 @@ function addRequirement(req, res, next) {
     });
 }
 
+function list(req, res, next) {
+    jobModel.find({ user_id: ObjectId(req.body.authUser._id)}).sort({ _id: -1 }).exec((err, docs) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    jobs: docs,
+                }
+            })
+        }
+    });
+}
+
 module.exports = {
     create: createJob,
     addDescription,
     addRequirement,
+    list,
 };
