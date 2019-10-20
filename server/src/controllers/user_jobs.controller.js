@@ -88,9 +88,36 @@ function list(req, res, next) {
     });
 }
 
+function edit(req, res, next) {
+    const { title, company, is_remote, job_type, visa_sponsor, salary_range, description, requirement } = req.body;
+
+    jobModel.findOneAndUpdate({
+        _id: req.params.job_id,
+    }, {
+        title,
+        company,
+        is_remote,
+        job_type,
+        visa_sponsor,
+        salary_range,
+        description,
+        requirement,
+    }, { new: true }, (err, doc) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: doc,
+            })
+        }
+    });
+}
+
 module.exports = {
     create: createJob,
     addDescription,
     addRequirement,
     list,
+    edit,
 };

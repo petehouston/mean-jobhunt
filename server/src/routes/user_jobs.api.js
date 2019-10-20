@@ -6,5 +6,6 @@ router.patch('/:job_id/description', controllers.addDescription);
 router.patch('/:job_id/requirement', controllers.addRequirement);
 
 router.get('/', controllers.list);
+router.put('/:job_id', controllers.edit);
 
 module.exports = router;
