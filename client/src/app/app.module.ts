@@ -12,11 +12,6 @@ import {JwtInterceptor} from './services/interceptors/jwt.interceptor';
 import {ReactiveFormsModule} from "@angular/forms";
 import { JobListingPageComponent } from './job-listing-page/job-listing-page.component';
 
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import {JwtInterceptor} from './services/interceptors/jwt.interceptor';
-import {ReactiveFormsModule} from "@angular/forms";
-import { JobListingPageComponent } from './job-listing-page/job-listing-page.component';
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 
 @NgModule({
@@ -33,9 +28,8 @@ import { ApplicantDetailsComponent} from './applicant-details/applicant-details.
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-
-    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
