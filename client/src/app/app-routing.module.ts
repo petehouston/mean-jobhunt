@@ -8,6 +8,7 @@ import {JobListingPageComponent} from "./job-listing-page/job-listing-page.compo
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 
 
+
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   { path: '', redirectTo: 'jobs', pathMatch: 'full' },
