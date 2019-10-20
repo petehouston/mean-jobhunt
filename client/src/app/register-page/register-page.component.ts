@@ -15,7 +15,7 @@ export class RegisterPageComponent implements OnInit {
   error: string = null;
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     if (this.authService.currentUserValue) {
-      this.router.navigate(['/', 'my-jobs']);
+      this.router.navigate(['/u/jobs']);
     }
   }
 
