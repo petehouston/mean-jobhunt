@@ -8,25 +8,25 @@
 
   <div class="row mt-5">
     <div class="col-md-12">
-      <form [formGroup]="addForm">
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
         <div class="form-group row">
           <label for="title" class="col-sm-2 col-form-label">Title</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="title" placeholder="ex. Senior Software Engineer">
+            <input type="text" formControlName="title" class="form-control" id="title" placeholder="ex. Senior Software Engineer">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="company" class="col-sm-2 col-form-label">Company</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="company" placeholder="ex. Google, Apple...">
+            <input type="text" formControlName="company" class="form-control" id="company" placeholder="ex. Google, Apple...">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="location" class="col-sm-2 col-form-label">Location</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="location" placeholder="ex. San Jose, CA">
+            <input type="text" formControlName="location" class="form-control" id="location" placeholder="ex. San Jose, CA">
           </div>
         </div>
 
@@ -35,7 +35,7 @@
           <div class="col-sm-2">Remote</div>
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="is_remote" />
+              <input formControlName="is_remote" class="form-check-input" type="checkbox" id="is_remote" />
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div class="col-sm-2">VISA Sponsor</div>
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="visa_sponsor" />
+              <input formControlName="visa_sponsor" class="form-check-input" type="checkbox" id="visa_sponsor" />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <div class="form-group row">
           <div class="col-sm-2">Job Type</div>
           <div class="col-sm-10">
-            <select class="form-control" id="job_type">
+            <select formControlName="job_type" class="form-control" id="job_type">
               <option>Type of job</option>
               <option value="0">Full-Time</option>
               <option value="1">Contract</option>
@@ -68,7 +68,7 @@
         <div class="form-group row">
           <div class="col-sm-2">Salary Range</div>
           <div class="col-sm-10">
-            <select class="form-control" id="salary_range">
+            <select formControlName="salary_range" class="form-control" id="salary_range">
               <option>Pick a salary range:</option>
               <option value="0">Less than $40k</option>
               <option value="1">$40k - $60k</option>
@@ -83,7 +83,7 @@
 
         <div class="form-group row">
           <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">Add Job</button>
           </div>
         </div>
       </form>
