@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { JobListingPageComponent } from './job-listing-page/job-listing-page.component';
 
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
+import { JobDetailPageComponent } from './job-detail-page/job-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ApplicantDetailsComponent} from './applicant-details/applicant-details.
     RegisterPageComponent,
     JobListingPageComponent,
     ApplicantDetailsComponent,
+    JobDetailPageComponent,
 
   ],
   imports: [
