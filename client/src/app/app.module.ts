@@ -14,6 +14,7 @@ import { JobListingPageComponent } from './job-listing-page/job-listing-page.com
 import { UserAddJobPageComponent } from './user-add-job-page/user-add-job-page.component';
 
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
+import { UserMyJobsPageComponent } from './user-my-jobs-page/user-my-jobs-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ApplicantDetailsComponent} from './applicant-details/applicant-details.
     JobListingPageComponent,
     UserAddJobPageComponent,
     ApplicantDetailsComponent,
+    UserMyJobsPageComponent,
   ],
   imports: [
     BrowserModule,

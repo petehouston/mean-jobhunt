@@ -8,6 +8,7 @@ import {JobListingPageComponent} from "./job-listing-page/job-listing-page.compo
 import {UserAddJobPageComponent} from "./user-add-job-page/user-add-job-page.component";
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 import {AuthGuard} from "./guards/auth.guard";
+import {UserMyJobsPageComponent} from "./user-my-jobs-page/user-my-jobs-page.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent },
   { path: 'jobs', component: JobListingPageComponent },
   { path: 'jobs/:job_id/application', component: ApplicantDetailsComponent },
+
+  { path: 'u/jobs', component: UserMyJobsPageComponent,
+    canActivate: [
+      // AuthGuard
+    ]
+  },
 
   { path: 'u/jobs/add', component: UserAddJobPageComponent,
     canActivate: [
