@@ -27,6 +27,30 @@ function createJob(req, res, next) {
     })
 }
 
+function addDescription(req, res, next) {
+    const description = req.body.description;
+    const jobId = req.params.job_id;
+    jobModel.findOneAndUpdate({
+        _id: ObjectId(jobId)
+    }, {
+        description
+    }, {
+      new: true,
+    }, (err, doc) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    job: doc
+                }
+            });
+        }
+    });
+}
+
 module.exports = {
     create: createJob,
+    addDescription,
 };
