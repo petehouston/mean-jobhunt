@@ -19,7 +19,7 @@
 		<h3> WELCOME TO THE PERSONAL DETAILS</h3>
 		<hr>
 		
-			<form >
+			<form [formGroup]="submitForm">
              <tr>
                     <td>Applicant Name:</td>
             <td>
@@ -34,42 +34,13 @@
 			<input type="text" th:field="*{appicantLastName}"
 					class="form-control mb-4 col-12" placeholder="Applicant LastName"></td>
 			</tr>
-			
-			<tr>
-                    <td>Applicant Id:</td>
-            <td>
-			<input type="text" th:field="*{applicantId}"
-					class="form-control mb-4 col-12" placeholder="Applicant Id"></td>
-			</tr>
-								
-			<tr>
-                    <td>Sex:</td>
-            <td>
-			<input type="text" th:field="*{sex}"
-					class="form-control mb-4 col-12" placeholder="Sex"></td>
-			</tr>
-			
-			<tr>
-                    <td>Date:</td>
-            <td>
-			<input type="date" th:field="*{date}"
-					class="form-control mb-4 col-12" placeholder="Date"></td>
-			</tr>
-			
+						
 			<tr>
                     <td>Email:</td>
             <td>
 			<input type="text" th:field="*{email}"
 					class="form-control mb-4 col-12" placeholder="Email"></td>
-			</tr>
-			
-			<tr>
-                    <td>PhoneNumber:</td>
-            <td>
-			<input type="text" th:field="*{phone}"
-					class="form-control mb-4 col-12" placeholder="Phone" ></td>
 			</tr>		
-					
 			<tr>
 			<td>	
 			<button type="submit" >Save</button></td>
@@ -78,7 +49,7 @@
 		</form>
 	
 		<hr>
-		<a href="/joblist">Back to Job listing Page</a>
+		<a href="/jobs">Back to Job listing Page</a>
 		
 	</div>
 </body>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-applicant-details',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./applicant-details.component.css']
 })
 export class ApplicantDetailsComponent implements OnInit {
-
+  submitForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
