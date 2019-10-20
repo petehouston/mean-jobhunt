@@ -5,9 +5,8 @@
         <div class="card-header bg-primary text-light text-center text-uppercase">
           <strong>Register an Account</strong>
         </div>
-
         <div class="card-body">
-          <form>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Your name...">
