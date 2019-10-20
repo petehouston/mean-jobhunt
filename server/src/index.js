@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("./config/database");
 const authRouter = require('./routes/auth.api');
+const userJobsRouter = require('./routes/user_jobs.api');
+const jobsRouter = require('./routes/jobs.api');
+const mwIsAuth = require('./middleware/is_authenticated.middleware');
 const { SECRET_KEY, STATUS_ERROR } = require('./common/constants');
 
 // Start database connection
@@ -25,7 +28,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // ROUTING
 /////////////////////////////////////////
 app.use('/auth', authRouter);
-
+app.use('/api/jobs', jobsRouter);
+app.use('/api/u/jobs', mwIsAuth, userJobsRouter);
 
 /////////////////////////////////////////
 // ERROR HANDLER

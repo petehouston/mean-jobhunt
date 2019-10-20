@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 py-5">
+      <div class="card">
+        <div class="card-header bg-primary text-light text-center text-uppercase">
+          <strong>Register an Account</strong>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" formControlName="name" [ngClass]="{'is-danger': submitted && registerForm.controls.name.errors}" class="form-control" id="name" aria-describedby="name" placeholder="Your name..." required>
+              <div *ngIf="submitted && registerForm.controls.name.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.name.errors.required">Name is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" formControlName="email" [ngClass]="{'is-danger': submitted && registerForm.controls.email.errors}" class="form-control" id="email" aria-describedby="email" placeholder="Your email..." required>
+              <div *ngIf="submitted && registerForm.controls.email.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.email.errors.required">Email is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" [ngClass]="{'is-danger': submitted && registerForm.controls.password.errors}" class="form-control" id="password" placeholder="Strong and secret password" required>
+              <div *ngIf="submitted && registerForm.controls.password.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div>
+              <div class="col-md-6">
+                <a class="btn btn-outline-success btn-block text-success" [routerLink]="['/', 'login']">Already had account?</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
