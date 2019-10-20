@@ -12,9 +12,12 @@ import {Router} from "@angular/router";
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   error: string = null;
+  submitted: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
-    this.loginForm = this.createFormGroup();
+    if (this.authService.currentUserValue) {
+      this.router.navigate(['/', 'my-jobs']);
+    }
   }
 
   createFormGroup() {
@@ -25,18 +28,18 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginForm = this.createFormGroup();
   }
 
   onSubmit() {
+    this.submitted = true;
     if (this.loginForm.invalid) return;
 
     this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value)
       .pipe(first())
-      .subscribe(payload => {
-        if (payload['status'] === 'success') {
+      .subscribe(user => {
+        if (user) {
           this.router.navigate(['/', 'my-jobs']);
-        } else {
-          this.error = payload['message'];
         }
       }, err => {
         this.error = err.statusText;

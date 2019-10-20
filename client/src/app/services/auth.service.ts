@@ -3,6 +3,8 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
 
+const API_URL = 'http://localhost:4000/auth';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,10 +22,10 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post('http://localhost:4000/api/login', {email, password})
+    return this.http.post(`${API_URL}/login`, {email, password})
       .pipe(
-        map(payload => {
-          const user = {email, access_token: payload['access_token'] };
+        map(response => {
+          const user = {email, access_token: response['payload']['access_token'] };
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);
           return user;
@@ -32,10 +34,10 @@ export class AuthService {
   }
 
   register(name: string, email: string, password: string) {
-    return this.http.post('http://localhost:4000/api/register', {name, email, password})
+    return this.http.post(`${API_URL}/register`, {name, email, password})
       .pipe(
-        map(payload => {
-          return payload['status'] === 'success';
+        map(response => {
+          return response['status'] === 'success';
         })
       );
   }
