@@ -1,9 +1,92 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-md-12">
-      <h1>Add Job</h1>
+      <h1 class="display-4">Add Job</h1>
+      <hr>
     </div>
-    <hr>
-    
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <form [formGroup]="addForm">
+        <div class="form-group row">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" placeholder="ex. Senior Software Engineer">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="company" class="col-sm-2 col-form-label">Company</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="company" placeholder="ex. Google, Apple...">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="location" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="location" placeholder="ex. San Jose, CA">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-sm-2">Remote</div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="is_remote" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-2">VISA Sponsor</div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="visa_sponsor" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-2">Job Type</div>
+          <div class="col-sm-10">
+            <select class="form-control" id="job_type">
+              <option>Type of job</option>
+              <option value="0">Full-Time</option>
+              <option value="1">Contract</option>
+              <option value="2">Part-Time</option>
+              <option value="3">Internship</option>
+              <option value="4">Commission</option>
+              <option value="5">Temporary</option>
+              <option value="6">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-2">Salary Range</div>
+          <div class="col-sm-10">
+            <select class="form-control" id="salary_range">
+              <option>Pick a salary range:</option>
+              <option value="0">Less than $40k</option>
+              <option value="1">$40k - $60k</option>
+              <option value="2">$60k - $80k</option>
+              <option value="3">$80k - $120k</option>
+              <option value="4">$120k - $160k</option>
+              <option value="5">$160k - $240k</option>
+              <option value="6">More than $240k</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
