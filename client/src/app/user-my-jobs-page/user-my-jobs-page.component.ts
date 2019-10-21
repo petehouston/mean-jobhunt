@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserJobsService} from "../services/user_jobs.service";
 
 @Component({
   selector: 'app-user-my-jobs-page',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-my-jobs-page.component.css']
 })
 export class UserMyJobsPageComponent implements OnInit {
-
-  constructor() { }
+  jobs: Array<Object> = [];
+  constructor(private jobService: UserJobsService) {
+    this.jobService.listJobs().subscribe(r => {
+      this.jobs = r['payload']['jobs'];
+      console.log(this.jobs);
+    })
+  }
 
   ngOnInit() {
   }

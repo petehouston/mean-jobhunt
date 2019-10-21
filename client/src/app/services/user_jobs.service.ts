@@ -14,4 +14,8 @@ export class UserJobsService {
   addJob({ title, company, location, is_remote, visa_sponsor, job_type, salary_range }) : Observable<Object> {
     return this.http.post(`${API_URL}`, { title, company, location, is_remote, visa_sponsor, job_type, salary_range } );
   }
+
+  listJobs() : Observable<Object> {
+    return this.http.get(`${API_URL}`);
+  }
 }
