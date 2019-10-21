@@ -11,6 +11,9 @@ const JobSchema = new Schema({
     company: {
         type: String, trim: true, required: true,
     },
+    location: {
+        type: String, trim: true, required: true,
+    },
     is_remote: {
         type: Boolean, default: false,
     },

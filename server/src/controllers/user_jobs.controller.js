@@ -3,10 +3,11 @@ const { ObjectId } = require('mongoose').mongo;
 const { STATUS_SUCCESS, STATUS_ERROR } = require('../common/constants');
 
 function createJob(req, res, next) {
-    const {title, company, is_remote, job_type, visa_sponsor, salary_range} = req.body;
+    const {title, company, location, is_remote, job_type, visa_sponsor, salary_range} = req.body;
     jobModel.create({
         title,
         company,
+        location,
         is_remote,
         job_type,
         visa_sponsor,
@@ -89,13 +90,14 @@ function list(req, res, next) {
 }
 
 function edit(req, res, next) {
-    const { title, company, is_remote, job_type, visa_sponsor, salary_range, description, requirement } = req.body;
+    const { title, company, location, is_remote, job_type, visa_sponsor, salary_range, description, requirement } = req.body;
 
     jobModel.findOneAndUpdate({
         _id: req.params.job_id,
     }, {
         title,
         company,
+        location,
         is_remote,
         job_type,
         visa_sponsor,

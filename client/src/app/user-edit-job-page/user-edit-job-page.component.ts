@@ -59,6 +59,7 @@ export class UserEditJobPageComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.f.location.value);
 
     if (this.editForm.invalid) {
       this.submitted = false;
