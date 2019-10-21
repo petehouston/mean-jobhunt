@@ -3,20 +3,20 @@ body {
   }
 
   h3 {
-      color : black;
-      position: relative;
-  }
+      
+      }
 
   li{
-      color: whitesmoke;
+      
   }
 
   #div1 {
+    
     border: solid 10px white;
-      background-color: green
-  }
+      
+          }
 
   #div2 {
-    border: solid 10px white;
-    background-color:blue;
+     border: solid 10px white;
+       
 }
