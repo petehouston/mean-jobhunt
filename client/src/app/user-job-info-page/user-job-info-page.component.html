@@ -1,0 +1,77 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/u/jobs']" class="mb-5">Back to Jobs</a>
+
+      <h1>Job Information</h1>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+          <button type="button" class="btn btn-block btn-success mb-2">Edit</button>
+          <button type="button" class="btn btn-block btn-info mb-2" *ngIf="!job.is_published">Publish</button>
+          <button type="button" class="btn btn-block btn-warning mb-2" *ngIf="job.is_published">Unpublish</button>
+    </div>
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-body">
+          <dl class="row">
+            <dt class="col-md-2">Title</dt>
+            <dd class="col-md-10">{{job.title}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Company</dt>
+            <dd class="col-md-10">{{job.company}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Location</dt>
+            <dd class="col-md-10">{{job.location}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Job Type</dt>
+            <dd class="col-md-10">{{job.job_type | job_type}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Remote</dt>
+            <dd class="col-md-10">{{job.is_remote ? 'Yes' : 'No'}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">VISA Sponsor</dt>
+            <dd class="col-md-10">{{job.visa_sponsor ? 'Yes': 'No'}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Salary</dt>
+            <dd class="col-md-10">{{job.salary_range | salary_range}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Description</dt>
+            <dd class="col-md-10">{{job.description || 'Click EDIT to add description'}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Requirement</dt>
+            <dd class="col-md-10">{{job.requirement || 'Click EDIT to update requirement'}}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-2">Status</dt>
+            <dd class="col-md-10">
+              <span class="badge badge-pill badge-success" *ngIf="job.is_published">PUBLISHED</span>
+              <span class="badge badge-pill badge-warning" *ngIf="!job.is_published">UNPUBLISHED</span>
+
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

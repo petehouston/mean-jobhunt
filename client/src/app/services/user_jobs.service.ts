@@ -18,4 +18,8 @@ export class UserJobsService {
   listJobs() : Observable<Object> {
     return this.http.get(`${API_URL}`);
   }
+
+  getJob(jobId: string) {
+    return this.http.get(`${API_URL}/${jobId}`);
+  }
 }
