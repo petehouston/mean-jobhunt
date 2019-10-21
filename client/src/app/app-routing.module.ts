@@ -12,6 +12,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import {UserMyJobsPageComponent} from "./user-my-jobs-page/user-my-jobs-page.component";
 import {UserJobInfoPageComponent} from "./user-job-info-page/user-job-info-page.component";
 import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
+import {UserEditJobPageComponent} from "./user-edit-job-page/user-edit-job-page.component";
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -30,6 +31,11 @@ const routes: Routes = [
   },
   {
     path: 'u/jobs/add', component: UserAddJobPageComponent,
+    canActivate: [
+      // AuthGuard,
+    ]
+  },
+  {path: 'u/jobs/:job_id/edit', component: UserEditJobPageComponent,
     canActivate: [
       // AuthGuard,
     ]

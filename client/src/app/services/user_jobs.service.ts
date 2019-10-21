@@ -22,4 +22,8 @@ export class UserJobsService {
   getJob(jobId: string) {
     return this.http.get(`${API_URL}/${jobId}`);
   }
+
+  updateJob(jobId: string, {title, company, location, is_remote, visa_sponsor, job_type, salary_range, description, requirement }) : Observable<Object> {
+    return this.http.patch(`${API_URL}/${jobId}`, {title, company, location, is_remote, visa_sponsor, job_type, salary_range, description, requirement });
+  }
 }

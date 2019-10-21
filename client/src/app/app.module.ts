@@ -19,21 +19,31 @@ import {UserJobInfoPageComponent} from './user-job-info-page/user-job-info-page.
 import {JobTypePipe} from "./pipes/job_type.pipe";
 import {SalaryRangePipe} from "./pipes/salary_range.pipe";
 import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
+import { UserEditJobPageComponent } from './user-edit-job-page/user-edit-job-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
+
+    // auth pages
     LoginPageComponent,
     RegisterPageComponent,
+
+    // public pages
     JobListingPageComponent,
     UserAddJobPageComponent,
     ApplicantDetailsComponent,
     JobDetailPageComponent,
+
+    // user pages
     UserProfilePageComponent,
     UserMyJobsPageComponent,
+    UserEditJobPageComponent,
     UserJobInfoPageComponent,
+
+    // pipes
     JobTypePipe,
     SalaryRangePipe,
   ],
