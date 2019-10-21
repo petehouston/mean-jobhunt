@@ -21,7 +21,25 @@ function getInfo(req, res, next) {
     });
 }
 
+function getByLatest(req, res, next) {
+    jobModel.find()
+        .sort({ _id: -1 })
+        .limit(10)
+        .exec((err, docs) => {
+            if (err) {
+                next(err);
+            } else {
+                res.json({
+                    status: STATUS_SUCCESS,
+                    payload: {
+                        jobs: docs,
+                    }
+                })
+            }
+        });
+}
 
 module.exports = {
     get: getInfo,
+    getByLatest,
 };
