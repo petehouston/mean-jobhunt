@@ -17,6 +17,24 @@ function getProfile(req, res, next) {
     })
 }
 
+function changePassword(req, res, next) {
+    userModel.findOneAndUpdate({
+        _id: req.body.authUser._id,
+    }, {
+        password: req.body.password
+    }, { new: true}, (err, doc) => {
+        if (err) next(err);
+        else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: doc
+            })
+        }
+    });
+}
+
+
 module.exports = {
     getProfile,
+    changePassword,
 }

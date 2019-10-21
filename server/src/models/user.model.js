@@ -30,5 +30,15 @@ UserSchema.pre('save', function (next) {
     next();
 });
 
+UserSchema.pre('update', function (next) {
+    this.password = bcrypt.hashSync(this.password, salt);
+    next();
+});
+
+UserSchema.pre('findOneAndUpdate', function (next) {
+    this.password = bcrypt.hashSync(this.password, salt);
+    next();
+});
+
 module.exports = mongoose.model('User', UserSchema);
 
