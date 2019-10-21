@@ -21,10 +21,10 @@ function getInfo(req, res, next) {
     });
 }
 
-function getByLatest(req, res, next) {
-    jobModel.find()
-        .sort({ _id: -1 })
-        .limit(10)
+function latest(req, res, next) {
+    jobModel.find({})
+        .sort({ created_at : -1, _id: -1 })
+        .limit(2)
         .exec((err, docs) => {
             if (err) {
                 next(err);
@@ -41,5 +41,5 @@ function getByLatest(req, res, next) {
 
 module.exports = {
     get: getInfo,
-    getByLatest,
+    getByLatest: latest,
 };
