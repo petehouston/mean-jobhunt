@@ -15,6 +15,9 @@ import { UserAddJobPageComponent } from './user-add-job-page/user-add-job-page.c
 
 import { ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 import { UserMyJobsPageComponent } from './user-my-jobs-page/user-my-jobs-page.component';
+import { UserJobInfoPageComponent } from './user-job-info-page/user-job-info-page.component';
+import {JobTypePipe} from "./pipes/job_type.pipe";
+import {SalaryRangePipe} from "./pipes/salary_range.pipe";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { UserMyJobsPageComponent } from './user-my-jobs-page/user-my-jobs-page.c
     UserAddJobPageComponent,
     ApplicantDetailsComponent,
     UserMyJobsPageComponent,
+    UserJobInfoPageComponent,
+    JobTypePipe,
+    SalaryRangePipe,
   ],
   imports: [
     BrowserModule,
