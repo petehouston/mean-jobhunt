@@ -30,4 +30,8 @@ export class UserJobsService {
   publishJob(jobId: string) {
     return this.http.patch(`${API_URL}/${jobId}/publish`, {});
   }
+
+  unpublishJob(jobId: string) {
+    return this.http.patch(`${API_URL}/${jobId}/unpublish`, {});
+  }
 }

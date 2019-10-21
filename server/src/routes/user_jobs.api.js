@@ -9,5 +9,6 @@ router.get('/', controllers.list);
 router.get('/:job_id', controllers.getInfo);
 router.patch('/:job_id', controllers.edit);
 router.patch('/:job_id/publish', controllers.publish);
+router.patch('/:job_id/unpublish', controllers.unpublish);
 
 module.exports = router;

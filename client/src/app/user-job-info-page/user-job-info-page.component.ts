@@ -31,4 +31,10 @@ export class UserJobInfoPageComponent implements OnInit {
     });
   }
 
+  onUnpublish() {
+    this.jobService.unpublishJob(this.jobId).subscribe(r => {
+      location.reload();
+    });
+  }
+
 }
