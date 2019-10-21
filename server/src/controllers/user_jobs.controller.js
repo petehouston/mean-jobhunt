@@ -114,10 +114,26 @@ function edit(req, res, next) {
     });
 }
 
+function getInfo(req, res, next) {
+    jobModel.findOne({
+        _id: ObjectId(req.params.job_id)
+    }, (err, doc) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: doc
+            });
+        }
+    })
+}
+
 module.exports = {
     create: createJob,
     addDescription,
     addRequirement,
     list,
     edit,
+    getInfo,
 };
