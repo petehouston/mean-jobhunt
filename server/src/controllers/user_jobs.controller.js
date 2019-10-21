@@ -129,6 +129,28 @@ function getInfo(req, res, next) {
     })
 }
 
+function publish(req, res, next) {
+    const jobId = req.params.job_id;
+    jobModel.findOneAndUpdate({
+        _id: ObjectId(jobId)
+    }, {
+        is_published: true,
+    }, {
+        new: true,
+    }, (err, doc) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    job: doc
+                }
+            });
+        }
+    });
+}
+
 module.exports = {
     create: createJob,
     addDescription,
@@ -136,4 +158,5 @@ module.exports = {
     list,
     edit,
     getInfo,
+    publish,
 };

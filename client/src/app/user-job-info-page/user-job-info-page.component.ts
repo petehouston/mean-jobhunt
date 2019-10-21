@@ -9,8 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UserJobInfoPageComponent implements OnInit {
   job = {};
+  jobId: string = null;
   error: string = null;
   constructor(private jobService: UserJobsService, private route: ActivatedRoute) {
+    this.jobId = route.snapshot.params.job_id;
     this.jobService.getJob(route.snapshot.params.job_id).subscribe(
       res => {
         if (res['status'] === 'success') {
@@ -21,6 +23,12 @@ export class UserJobInfoPageComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onPublish() {
+    this.jobService.publishJob(this.jobId).subscribe(r => {
+      location.reload();
+    });
   }
 
 }

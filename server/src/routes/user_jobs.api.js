@@ -8,5 +8,6 @@ router.patch('/:job_id/requirement', controllers.addRequirement);
 router.get('/', controllers.list);
 router.get('/:job_id', controllers.getInfo);
 router.patch('/:job_id', controllers.edit);
+router.patch('/:job_id/publish', controllers.publish);
 
 module.exports = router;
