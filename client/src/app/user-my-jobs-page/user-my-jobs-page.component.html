@@ -18,13 +18,19 @@
                   <small>{{ j.created_at | timeAgo }}</small>
                 </div>
                 <p class="mb-1 text-dark">
-                  <small>{{ j.company }}</small> {{"&#8226;"}}
+                  <small>{{ j.company }}</small>
                   <small>{{ j.location }}</small>
                 </p>
                 <p class="mb-1">
-                  <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-                  <small class="text-warning" *ngIf="j.visa_sponsor">Visa Sponsor</small> {{"&#8226;"}}
-                  <small class="text-info" *ngIf="j.is_remote">Remote</small>
+                  <small class="text-success mr-5">{{ j.salary_range | salary_range }}</small>
+
+                  <span *ngIf="j.visa_sponsor">
+                    <small class="text-warning mr-5">Visa Sponsor</small>
+                  </span>
+                  <span *ngIf="j.is_remote">
+                    <small class="text-info mr-5">Remote</small>
+                  </span>
+
                 </p>
               </div>
 
@@ -39,7 +45,7 @@
           </a>
 
 
-    </div>
-  </div>
+        </div>
+      </div>
 
-</div>
+    </div>
