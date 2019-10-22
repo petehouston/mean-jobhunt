@@ -39,7 +39,7 @@ const JobSchema = new Schema({
         type: Schema.Types.ObjectId, required: true, ref: 'users',
     },
     created_at: {
-        type: Date, required: true, default: Date.now(),
+        type: Date, required: true,
     }
 });
 

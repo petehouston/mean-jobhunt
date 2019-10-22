@@ -13,6 +13,7 @@ function createJob(req, res, next) {
         visa_sponsor,
         salary_range,
         user_id: ObjectId(req.body.authUser._id),
+        created_at: new Date().toISOString(),
     }, (err, result) => {
         if (err) {
             next(err);
