@@ -28,7 +28,6 @@ function getByLatest(req, res, next) {
         is_published: true,
     })
         .sort({ created_at : -1, _id: -1 })
-        .limit(10)
         .exec((err, docs) => {
             if (err) {
                 next(err);
@@ -50,19 +49,19 @@ function getByVisaSponsor(req, res, next) {
     }).sort({
         _id: -1,
         created_at: -1,
-    }).limit(10)
-        .exec((err, docs) => {
-            if (err) {
-                next(err);
-            } else {
-                res.json({
-                    status: STATUS_SUCCESS,
-                    payload: {
-                        jobs: docs,
-                    }
-                })
-            }
-        });
+    })
+    .exec((err, docs) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    jobs: docs,
+                }
+            })
+        }
+    });
 }
 
 function getByRemote(req, res, next) {
@@ -72,19 +71,19 @@ function getByRemote(req, res, next) {
     }).sort({
         _id: -1,
         created_at: -1,
-    }).limit(10)
-        .exec((err, docs) => {
-            if (err) {
-                next(err);
-            } else {
-                res.json({
-                    status: STATUS_SUCCESS,
-                    payload: {
-                        jobs: docs,
-                    }
-                })
-            }
-        });
+    })
+    .exec((err, docs) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    jobs: docs,
+                }
+            })
+        }
+    });
 }
 
 function getByHighSalary(req, res, next) {
@@ -93,19 +92,19 @@ function getByHighSalary(req, res, next) {
     }).sort({
         salary_range: -1,
         created_at: -1,
-    }).limit(10)
-        .exec((err, docs) => {
-            if (err) {
-                next(err);
-            } else {
-                res.json({
-                    status: STATUS_SUCCESS,
-                    payload: {
-                        jobs: docs,
-                    }
-                })
-            }
-        });
+    })
+    .exec((err, docs) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    jobs: docs,
+                }
+            })
+        }
+    });
 }
 
 function applyJob(req, res, next) {
