@@ -3,7 +3,8 @@ const { STATUS_SUCCESS } = require('../common/constants');
 
 function getInfo(req, res, next) {
     jobModel.findOne({
-        _id: req.params.job_id
+        _id: req.params.job_id,
+        is_published: true,
     }, {
         __v: 0,
         user_id: 0,
@@ -22,7 +23,9 @@ function getInfo(req, res, next) {
 }
 
 function getByLatest(req, res, next) {
-    jobModel.find({})
+    jobModel.find({
+        is_published: true,
+    })
         .sort({ created_at : -1, _id: -1 })
         .limit(10)
         .exec((err, docs) => {
@@ -41,7 +44,8 @@ function getByLatest(req, res, next) {
 
 function getByVisaSponsor(req, res, next) {
     jobModel.find({
-        visa_sponsor: true
+        visa_sponsor: true,
+        is_published: true,
     }).sort({
         _id: -1,
         created_at: -1,
