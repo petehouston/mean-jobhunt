@@ -18,6 +18,14 @@
       <div class="card">
         <div class="card-body">
           <dl class="row">
+            <dt class="col-md-2">Status</dt>
+            <dd class="col-md-10">
+              <span class="badge badge-pill badge-success" *ngIf="job.is_published">PUBLISHED</span>
+              <span class="badge badge-pill badge-warning" *ngIf="!job.is_published">UNPUBLISHED</span>
+            </dd>
+          </dl>
+
+          <dl class="row">
             <dt class="col-md-2">Title</dt>
             <dd class="col-md-10">{{job.title}}</dd>
           </dl>
@@ -68,14 +76,7 @@
             </dd>
           </dl>
 
-          <dl class="row">
-            <dt class="col-md-2">Status</dt>
-            <dd class="col-md-10">
-              <span class="badge badge-pill badge-success" *ngIf="job.is_published">PUBLISHED</span>
-              <span class="badge badge-pill badge-warning" *ngIf="!job.is_published">UNPUBLISHED</span>
 
-            </dd>
-          </dl>
         </div>
       </div>
     </div>
