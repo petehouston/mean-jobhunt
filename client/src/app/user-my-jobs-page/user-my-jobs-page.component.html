@@ -15,20 +15,20 @@
               <div class="col-md-10">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1 text-primary">{{ j.title }}</h5>
-                  <small>{{ j.created_at | timeAgo }}</small>
+                  <small><fa-icon [icon]="faClock" size="xs"></fa-icon> {{ j.created_at | timeAgo }}</small>
                 </div>
-                <p class="mb-1 text-dark">
-                  <small>{{ j.company }}</small>
-                  <small>{{ j.location }}</small>
+                <p class="mb-1 text-dark mt-3">
+                  <span class="mr-5">{{ j.company }}</span>
+                  <span><fa-icon class="text-danger" [icon]="faMapMarker"></fa-icon> {{ j.location }}</span>
                 </p>
-                <p class="mb-1">
-                  <small class="text-success mr-5">{{ j.salary_range | salary_range }}</small>
+                <p class="mb-1 mt-3">
+                  <span class="text-success mr-5">{{ j.salary_range | salary_range }}</span>
 
                   <span *ngIf="j.visa_sponsor">
-                    <small class="text-warning mr-5">Visa Sponsor</small>
+                    <span class="text-warning mr-5">Visa Sponsor</span>
                   </span>
                   <span *ngIf="j.is_remote">
-                    <small class="text-info mr-5">Remote</small>
+                    <span class="text-info mr-5">Remote</span>
                   </span>
 
                 </p>
