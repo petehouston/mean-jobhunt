@@ -24,4 +24,8 @@ export class JobsService {
   getHighSalariesJobs() {
     return this.http.get(`${API_URL}/high-salary`);
   }
+
+  getJobInfo(jobId: string) {
+    return this.http.get(`${API_URL}/${jobId}`);
+  }
 }
