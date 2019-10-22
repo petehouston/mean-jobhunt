@@ -86,9 +86,35 @@ function getByRemote(req, res, next) {
         });
 }
 
+function getByHighSalary(req, res, next) {
+    jobModel.find({
+        is_remote: true,
+        is_published: true,
+    }).sort({
+        _id: -1,
+        salary_range: -1,
+        created_at: -1,
+    }).limit(10)
+        .exec((err, docs) => {
+            if (err) {
+                next(err);
+            } else {
+                res.json({
+                    status: STATUS_SUCCESS,
+                    payload: {
+                        jobs: docs,
+                    }
+                })
+            }
+        });
+}
+
+
+
 module.exports = {
     get: getInfo,
     getByLatest,
     getByVisaSponsor,
     getByRemote,
+    getByHighSalary,
 };
