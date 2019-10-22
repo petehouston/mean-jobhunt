@@ -1,15 +1,31 @@
 <div class="container">
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="display-4">My Profile</h1>
+      <h1 class="display-4">Profile</h1>
       <hr>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <p>Name: <strong>{{ profile.name}}</strong></p>
-      <p>Email: <strong>{{ profile.email}}</strong></p>
+      <div class="card">
+        <div class="card-body">
+          <dl class="row">
+            <dt class="col-md-3">Name: </dt>
+            <dd class="col-md-9">{{ profile.name }}</dd>
+          </dl>
+
+          <dl class="row">
+            <dt class="col-md-3">Email: </dt>
+            <dd class="col-md-9">{{ profile.email }}</dd>
+          </dl>
+
+        </div>
+
+        <div class="card-footer">
+          <button (click)="onChangePassword()" class="btn btn-dark">Change Password</button>
+        </div>
+      </div>
 
     </div>
   </div>
