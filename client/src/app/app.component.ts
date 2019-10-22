@@ -10,7 +10,9 @@ import {Router} from "@angular/router";
 export class AppComponent {
   isAuth = false;
   constructor(private authService: AuthService, private router: Router) {
-    this.isAuth = this.authService.currentUserValue;
+    this.authService.currentUser.subscribe(x => {
+      this.isAuth = x != null;
+    });
   }
 
   onLogoutClicked() {

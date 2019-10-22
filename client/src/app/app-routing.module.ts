@@ -27,31 +27,31 @@ const routes: Routes = [
   {
     path: 'u/jobs', component: UserMyJobsPageComponent,
     canActivate: [
-      // AuthGuard
+      AuthGuard
     ]
   },
   {
     path: 'u/jobs/add', component: UserAddJobPageComponent,
     canActivate: [
-      // AuthGuard,
+      AuthGuard,
     ]
   },
   {
     path: 'u/jobs/:job_id/edit', component: UserEditJobPageComponent,
     canActivate: [
-      // AuthGuard,
+      AuthGuard,
     ]
   },
   {
     path: 'u/jobs/:job_id/applications', component: UserJobAppsPageComponent,
     canActivate: [
-      // AuthGuard,
+      AuthGuard,
     ]
   },
   {
     path: 'u/jobs/:job_id', component: UserJobInfoPageComponent,
     canActivate: [
-      // AuthGuard,
+      AuthGuard,
     ]
   },
 
