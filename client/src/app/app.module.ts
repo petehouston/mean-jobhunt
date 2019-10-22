@@ -21,6 +21,7 @@ import {SalaryRangePipe} from "./pipes/salary_range.pipe";
 import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
 import {UserEditJobPageComponent} from './user-edit-job-page/user-edit-job-page.component';
 import {TruncatePipe} from "./pipes/truncate.pipe";
+import {TimeAgoPipe} from "time-ago-pipe";
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {TruncatePipe} from "./pipes/truncate.pipe";
     JobTypePipe,
     SalaryRangePipe,
     TruncatePipe,
+    TimeAgoPipe, // `time-ago-pipe`
   ],
   imports: [
     BrowserModule,
