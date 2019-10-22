@@ -12,7 +12,6 @@ import {JwtInterceptor} from './services/interceptors/jwt.interceptor';
 import {ReactiveFormsModule} from "@angular/forms";
 import {JobListingPageComponent} from './job-listing-page/job-listing-page.component';
 import {UserAddJobPageComponent} from './user-add-job-page/user-add-job-page.component';
-import {ApplicantDetailsComponent} from './applicant-details/applicant-details.component';
 import {JobDetailPageComponent} from './job-detail-page/job-detail-page.component';
 import {UserMyJobsPageComponent} from './user-my-jobs-page/user-my-jobs-page.component';
 import {UserJobInfoPageComponent} from './user-job-info-page/user-job-info-page.component';
@@ -37,7 +36,6 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     // public pages
     JobListingPageComponent,
     UserAddJobPageComponent,
-    ApplicantDetailsComponent,
     JobDetailPageComponent,
 
     // user pages
