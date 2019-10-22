@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpRequest} from "@angular/common/http";
 
 const API_URL = `http://localhost:4000/api/jobs`;
 
@@ -27,5 +27,15 @@ export class JobsService {
 
   getJobInfo(jobId: string) {
     return this.http.get(`${API_URL}/${jobId}`);
+  }
+
+  postJobApplication(jobId: string, {name, email, resume}) {
+    let formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('resume', resume);
+
+    const req = new HttpRequest('POST', `${API_URL}/${jobId}/apply`, formData);
+    return this.http.request(req);
   }
 }
