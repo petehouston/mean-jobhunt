@@ -9,7 +9,10 @@ import {faLandmark, faMapMarker, faHandPointRight, faMoneyBill, faFileContract, 
   styleUrls: ['./job-detail-page.component.css']
 })
 export class JobDetailPageComponent implements OnInit {
-  job = {};
+  job = {
+    _id: '', title: '', company: '', location: '', salary_range: '', job_type: '', is_remote: '', visa_sponsor: '',
+    description: '', requirement: '',
+  };
   jobId: string = null;
 
   faLandMark = faLandmark;

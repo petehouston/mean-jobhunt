@@ -4,7 +4,7 @@
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">JOB.HUNT</a>
 
-        <div class="navbar-collapse collapse" *ngIf="!authService.currentUserValue; else authNavbar">
+        <div class="navbar-collapse collapse" *ngIf="!isAuth; else authNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/jobs']">View Jobs</a>

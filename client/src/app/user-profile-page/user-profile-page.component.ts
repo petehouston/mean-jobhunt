@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./user-profile-page.component.css']
 })
 export class UserProfilePageComponent implements OnInit {
-  profile = {};
+  profile = { name: '', email: ''};
 
   constructor(private profileService: UserProfileService) {
     this.profileService.get().subscribe(res => {

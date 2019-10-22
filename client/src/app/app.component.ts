@@ -8,7 +8,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  isAuth = false;
+  constructor(private authService: AuthService, private router: Router) {
+    this.isAuth = this.authService.currentUserValue;
+  }
 
   onLogoutClicked() {
     this.authService.logout();

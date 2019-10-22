@@ -13,7 +13,9 @@ import Swal from 'sweetalert2';
 })
 export class JobApplicationPageComponent implements OnInit {
   jobId: string = null;
-  job: Object = {};
+  job = {
+    title: '', company: '', location: '', salary_range: 0, job_type: 0, is_remote: false, visa_sponsor: false,
+  };
   form: FormGroup;
   @ViewChild('lblResume', { static: true }) lblResume;
   resumeFile;

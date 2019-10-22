@@ -8,7 +8,10 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./user-job-info-page.component.css']
 })
 export class UserJobInfoPageComponent implements OnInit {
-  job = {};
+  job = {
+    _id: '', title: '', company: '', location: '', salary_range: '', job_type: '', is_remote: '', visa_sponsor: '',
+    description: '', requirement: '', can_publish: false, is_published: false,
+  };
   jobId: string = null;
   error: string = null;
   constructor(private jobService: UserJobsService, private route: ActivatedRoute) {
@@ -17,7 +20,7 @@ export class UserJobInfoPageComponent implements OnInit {
       res => {
         if (res['status'] === 'success') {
           this.job = res['payload'];
-          this.job['can_publish'] = this.job['description'] && this.job['requirement'];
+          this.job['can_publish'] = !!(this.job['description'] && this.job['requirement']);
         }
       }
     )
