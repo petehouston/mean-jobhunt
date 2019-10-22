@@ -22,6 +22,7 @@ import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.co
 import {UserEditJobPageComponent} from './user-edit-job-page/user-edit-job-page.component';
 import {TruncatePipe} from "./pipes/truncate.pipe";
 import {TimeAgoPipe} from "time-ago-pipe";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {TimeAgoPipe} from "time-ago-pipe";
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     AppRoutingModule,
   ],
   providers: [
