@@ -3,21 +3,6 @@ const jobModel = require('../models/job.model');
 const jobApplicationModel = require('../models/job_application.model');
 const { STATUS_SUCCESS } = require('../common/constants');
 const { ObjectId } = require('mongoose').mongo;
-const multer = require('multer');
-const path = require('path');
-const uploader = multer({
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, process.env.PUBLIC_PATH);
-        },
-        filename: (req, file, cb) => {
-            const fname = Date.now() + '.' + file.originalname.split('.').pop();
-            const resumeUrl = `assets/${fname}`;
-            req.resume_url = resumeUrl;
-            cb(null, fname);
-        },
-    }),
-});
 
 function getInfo(req, res, next) {
     jobModel.findOne({
@@ -126,8 +111,7 @@ function getByHighSalary(req, res, next) {
 }
 
 function applyJob(req, res, next) {
-    console.log('here');
-    let resumeUpload = uploader.single('resume');
+    let resumeUpload = require('../middleware/resume_upload.middleware');
     resumeUpload(req, res, err => {
         if (err) {
             next(err);
@@ -135,7 +119,7 @@ function applyJob(req, res, next) {
             jobApplicationModel.create({
                 name: req.body.name,
                 email: req.body.email,
-                resume_url: req.resume_url,
+                resume_url: req.body.resume_url,
                 job_id: ObjectId(req.params.job_id),
             }, (err, doc) => {
                 if (err) {
