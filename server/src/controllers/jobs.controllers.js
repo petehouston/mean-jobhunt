@@ -1,9 +1,10 @@
 const jobModel = require('../models/job.model');
 const { STATUS_SUCCESS } = require('../common/constants');
+const { ObjectId } = require('mongoose').mongo;
 
 function getInfo(req, res, next) {
     jobModel.findOne({
-        _id: req.params.job_id,
+        _id: ObjectId(req.params.job_id),
         is_published: true,
     }, {
         __v: 0,
@@ -12,8 +13,6 @@ function getInfo(req, res, next) {
         if (err) {
             next(err);
         } else {
-            delete doc['user_id'];
-            delete doc['__v'];
             res.json({
                 status: STATUS_SUCCESS,
                 payload: doc,
