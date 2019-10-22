@@ -54,12 +54,18 @@
 
           <dl class="row">
             <dt class="col-md-2">Description</dt>
-            <dd class="col-md-10">{{job.description || 'Click EDIT to add description'}}</dd>
+            <dd class="col-md-10">
+              <div [innerHTML]="job.description" *ngIf="job.description; else noDescription"></div>
+              <ng-template #noDescription><p>Click <strong>EDIT BUTTON</strong></p> to add description.</ng-template>
+            </dd>
           </dl>
 
           <dl class="row">
             <dt class="col-md-2">Requirement</dt>
-            <dd class="col-md-10">{{job.requirement || 'Click EDIT to update requirement'}}</dd>
+            <dd class="col-md-10">
+              <div [innerHTML]="job.requirement" *ngIf="job.requirement; else noRequirement"></div>
+              <ng-template #noRequirement><p>Click <strong>EDIT BUTTON</strong></p> to add requirement.</ng-template>
+            </dd>
           </dl>
 
           <dl class="row">
