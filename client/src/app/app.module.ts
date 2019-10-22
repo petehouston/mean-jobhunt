@@ -23,6 +23,7 @@ import {TruncatePipe} from "./pipes/truncate.pipe";
 import {TimeAgoPipe} from "time-ago-pipe";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { JobApplicationPageComponent } from './job-application-page/job-application-page.component';
+import {AngularEditorModule} from "@kolkov/angular-editor";
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { JobApplicationPageComponent } from './job-application-page/job-applicat
     HttpClientModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    AngularEditorModule,
     AppRoutingModule,
   ],
   providers: [

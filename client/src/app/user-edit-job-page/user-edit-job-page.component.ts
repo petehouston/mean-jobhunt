@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 import {UserJobsService} from "../services/user_jobs.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
   selector: 'app-user-edit-job-page',
@@ -12,6 +13,17 @@ export class UserEditJobPageComponent implements OnInit {
   job: Object = {};
   editForm: FormGroup;
   jobId: string = null;
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: false,
+    height: '15rem',
+    minHeight: '5rem',
+    translate: 'no',
+    defaultFontName: 'Helvetica Neue',
+    customClasses: [],
+  };
+
   submitted = false;
   error: string = null;
   errors;
