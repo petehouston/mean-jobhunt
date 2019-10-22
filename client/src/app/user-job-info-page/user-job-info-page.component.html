@@ -12,7 +12,7 @@
     <div class="col-md-2">
           <a [routerLink]="['edit']" type="button" class="btn btn-block btn-success mb-2">Edit</a>
           <hr>
-          <button (click)="onPublish()" type="button" class="btn btn-block btn-info mb-2" *ngIf="!job.is_published">Publish</button>
+          <button (click)="onPublish()" type="button" class="btn btn-block btn-info mb-2" *ngIf="!job.is_published" [disabled]="!job.can_publish">Publish</button>
           <a [routerLink]="['/jobs', jobId]" class="btn btn-info btn-block mb-2" *ngIf="job.is_published">View Job</a>
           <button (click)="onUnpublish()" type="button" class="btn btn-block btn-warning mb-2" *ngIf="job.is_published">Unpublish</button>
     </div>

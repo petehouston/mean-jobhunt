@@ -17,6 +17,7 @@ export class UserJobInfoPageComponent implements OnInit {
       res => {
         if (res['status'] === 'success') {
           this.job = res['payload'];
+          this.job['can_publish'] = this.job['description'] && this.job['requirement'];
         }
       }
     )
