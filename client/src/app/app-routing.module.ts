@@ -13,6 +13,7 @@ import {UserJobInfoPageComponent} from "./user-job-info-page/user-job-info-page.
 import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
 import {UserEditJobPageComponent} from "./user-edit-job-page/user-edit-job-page.component";
 import {JobApplicationPageComponent} from "./job-application-page/job-application-page.component";
+import {UserJobAppsPageComponent} from "./user-job-apps-page/user-job-apps-page.component";
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -35,7 +36,14 @@ const routes: Routes = [
       // AuthGuard,
     ]
   },
-  {path: 'u/jobs/:job_id/edit', component: UserEditJobPageComponent,
+  {
+    path: 'u/jobs/:job_id/edit', component: UserEditJobPageComponent,
+    canActivate: [
+      // AuthGuard,
+    ]
+  },
+  {
+    path: 'u/jobs/:job_id/applications', component: UserJobAppsPageComponent,
     canActivate: [
       // AuthGuard,
     ]
