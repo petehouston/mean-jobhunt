@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {first} from "rxjs/operators";
 import {Observable} from "rxjs";
+import {environment as env} from "../../environments/environment";
 
-const API_URL = 'http://localhost:4000/api/u/jobs';
+const API_URL = `${env.api.basepath}/api/u/jobs`;
 
 @Injectable({
   providedIn: 'root'
