@@ -25,6 +25,7 @@ app.use(require('cors')());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use('/assets', express.static(process.env.PUBLIC_PATH));
 /////////////////////////////////////////
 // ROUTING
 /////////////////////////////////////////

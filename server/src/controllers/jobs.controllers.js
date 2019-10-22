@@ -1,3 +1,4 @@
+require('dotenv').config();
 const jobModel = require('../models/job.model');
 const jobApplicationModel = require('../models/job_application.model');
 const { STATUS_SUCCESS } = require('../common/constants');
@@ -7,7 +8,7 @@ const path = require('path');
 const uploader = multer({
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, path.join(__dirname, '../../static'));
+            cb(null, process.env.PUBLIC_PATH);
         },
         filename: (req, file, cb) => {
             const fname = Date.now() + '.' + file.originalname.split('.').pop();
