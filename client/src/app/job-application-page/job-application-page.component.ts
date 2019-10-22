@@ -5,6 +5,7 @@ import {faLandmark, faMapMarker, faHandPointRight, faMoneyBill, faFileContract, 
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import Swal from 'sweetalert2';
 
+const ALLOWED_EXTS = ['pdf', 'doc', 'docx'];
 
 @Component({
   selector: 'app-job-application-page',
@@ -49,10 +50,19 @@ export class JobApplicationPageComponent implements OnInit {
   }
 
   onFileChange(e) {
-    this.lblResume.nativeElement.innerText = this.f.resume.value;
+    this.lblResume.nativeElement.innerText = this.f.resume.value.split('\\').pop();
 
     if(e.target.files && e.target.files.length) {
       const [file] = e.target.files;
+
+      const ext = file.name.split('.').pop();
+      if (ALLOWED_EXTS.indexOf(ext) < 0) {
+        Swal.fire({
+          type: 'error',
+          title: 'Error',
+          text: 'Invalid file type. Only allows: .doc, .docx, .pdx extensions file only'
+        });
+      }
 
       this.resumeFile = file;
     }
