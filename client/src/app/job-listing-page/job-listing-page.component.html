@@ -2,112 +2,55 @@
   <div class="row">
     <div class="col-md-3 px-2 py-5">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">Latest Jobs</a>
-        <a href="#" class="list-group-item list-group-item-action">VISA Sponsor Jobs</a>
-        <a href="#" class="list-group-item list-group-item-action">Remote Jobs</a>
-        <a href="#" class="list-group-item list-group-item-action">High Salaries Jobs</a>
+        <a (click)="loadLatestJobs()" class="list-group-item list-group-item-action" [ngClass]="{'selected': currentMode == 0}">Latest Jobs</a>
+        <a (click)="loadVisaSponsorJobs()" class="list-group-item list-group-item-action" [ngClass]="{'selected': currentMode == 1}">VISA Sponsor Jobs</a>
+        <a (click)="loadRemoteJobs()" class="list-group-item list-group-item-action" [ngClass]="{'selected': currentMode == 2}">Remote Jobs</a>
+        <a (click)="loadHighSalariesJobs()" class="list-group-item list-group-item-action" [ngClass]="{'selected': currentMode == 3}">High Salaries Jobs</a>
       </div>
     </div>
 
     <div class="col-md-9 px-2 py-5">
       <div class="card">
+        <div class="card-header">
+          <p>Click on one of these jobs to see detail offers.</p>
+        </div>
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-primary">iOS Software Engineer</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1 text-dark">
-              <small>AccuLynx</small> {{"&#8226;"}}
-              <small>Beloit, WI 53511</small>
-            </p>
-            <p class="mb-1">
-              <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-              <small class="text-warning">Visa Sponsor</small> {{"&#8226;"}}
-              <small class="text-info">Remote</small>
-            </p>
-            <p class="mb-1">We are actively looking for a smart and passionate iOS Mobile Engineer to evolve our Mobile SaaS offering.</p>
-          </a>
+          <a [routerLink]="['/u/jobs', j._id]" class="list-group-item list-group-item-action" *ngFor="let j of jobs">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1 text-primary">{{ j.title }}</h5>
+                  <small><fa-icon [icon]="faClock" size="xs"></fa-icon> {{ j.created_at | timeAgo }}</small>
+                </div>
+                <p class="mb-1 text-dark mt-3">
+                  <span class="mr-5">{{ j.company }}</span>
+                  <span><fa-icon class="text-danger" [icon]="faMapMarker"></fa-icon> {{ j.location }}</span>
+                </p>
+                <p class="mb-1 mt-3">
+                  <span class="text-success mr-5">{{ j.salary_range | salary_range }}</span>
+                  <span *ngIf="j.visa_sponsor">
+                    <span class="text-warning mr-5">Visa Sponsor</span>
+                  </span>
+                  <span *ngIf="j.is_remote">
+                    <span class="text-info mr-5">Remote</span>
+                  </span>
+                </p>
+              </div>
 
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-primary">iOS Software Engineer</h5>
-              <small>3 days ago</small>
             </div>
-            <p class="mb-1 text-dark">
-              <small>AccuLynx</small> {{"&#8226;"}}
-              <small>Beloit, WI 53511</small>
-            </p>
-            <p class="mb-1">
-              <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-              <small class="text-warning">Visa Sponsor</small> {{"&#8226;"}}
-              <small class="text-info">Remote</small>
-            </p>
-            <p class="mb-1">We are actively looking for a smart and passionate iOS Mobile Engineer to evolve our Mobile SaaS offering.</p>
           </a>
 
 
 
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-primary">iOS Software Engineer</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1 text-dark">
-              <small>AccuLynx</small> {{"&#8226;"}}
-              <small>Beloit, WI 53511</small>
-            </p>
-            <p class="mb-1">
-              <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-              <small class="text-warning">Visa Sponsor</small> {{"&#8226;"}}
-              <small class="text-info">Remote</small>
-            </p>
-            <p class="mb-1">We are actively looking for a smart and passionate iOS Mobile Engineer to evolve our Mobile SaaS offering.</p>
-          </a>
 
 
-
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-primary">iOS Software Engineer</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1 text-dark">
-              <small>AccuLynx</small> {{"&#8226;"}}
-              <small>Beloit, WI 53511</small>
-            </p>
-            <p class="mb-1">
-              <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-              <small class="text-warning">Visa Sponsor</small> {{"&#8226;"}}
-              <small class="text-info">Remote</small>
-            </p>
-            <p class="mb-1">We are actively looking for a smart and passionate iOS Mobile Engineer to evolve our Mobile SaaS offering.</p>
-          </a>
-
-
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-primary">iOS Software Engineer</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-1 text-dark">
-              <small>AccuLynx</small> {{"&#8226;"}}
-              <small>Beloit, WI 53511</small>
-            </p>
-            <p class="mb-1">
-              <small class="text-success">$45k - $60k</small> {{"&#8226;"}}
-              <small class="text-warning">Visa Sponsor</small> {{"&#8226;"}}
-              <small class="text-info">Remote</small>
-            </p>
-            <p class="mb-1">We are actively looking for a smart and passionate iOS Mobile Engineer to evolve our Mobile SaaS offering.</p>
-          </a>
 
         </div>
       </div>
 
-      <p class="mt-3 text-center">
-      <button class="btn btn-outline-info">Load more</button>
-      </p>
+<!--      <p class="mt-3 text-center">-->
+<!--      <button class="btn btn-outline-info">Load more</button>-->
+<!--      </p>-->
     </div>
   </div>
 </div>
