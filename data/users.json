@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5daa757dc0a6330a10d48d2a"},"name":"Pete Houston","email":"contact@petehouston.com","password":"$2b$10$/78B8dVuuKBbSWZPNO8lmuyq6zsjVLV2piU4F9mVOTsD33wbhUqaW","__v":0}
+{"_id":{"$oid":"5dabffbac1557d20588db8fe"},"name":"Long Tran","email":"longtran@123.com","password":"$2b$10$1jgd8aytNU2BEEQKqNFvCu5qWthZ2.mR0Br5oHl5w4ADIvj5dNKHi","__v":0}
+{"_id":{"$oid":"5dac0019c1557d20588db8ff"},"name":"Bao Nguyen","email":"baonguyen@123.com","password":"$2b$10$wheKkw2yS4AleVUH/zEhF.BQD25ipgxCXps5DBswiy61ljewCMCZK","__v":0}
+{"_id":{"$oid":"5dac004cc1557d20588db900"},"name":"Hau Pham","email":"haupham@123.com","password":"$2b$10$cjuLo9JSQSCJnlOu33OfHOYyiIkIodpoa9nAVhGH6UYDprOTP9Xv.","__v":0}
+{"_id":{"$oid":"5dacaf577d230a33e8f3cfc6"},"name":"Van Luan","email":"luan@123.com","password":"$2b$10$hGvKMxRL2UWfcSX5HS.nueA6tY3nQw/ArB8Gza/oqYRGfyQnnWENq","__v":0}
+{"_id":{"$oid":"5dacafdf7d230a33e8f3cfc7"},"name":"Robel","email":"robel@123.com","password":"$2b$10$gA8kfJEhttssdtNQwAmZBOb.Mbnh0FuywzyN8LyxD/KIV7YJSjNb.","__v":0}
