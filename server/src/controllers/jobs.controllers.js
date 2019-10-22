@@ -89,10 +89,8 @@ function getByRemote(req, res, next) {
 
 function getByHighSalary(req, res, next) {
     jobModel.find({
-        is_remote: true,
         is_published: true,
     }).sort({
-        _id: -1,
         salary_range: -1,
         created_at: -1,
     }).limit(10)
