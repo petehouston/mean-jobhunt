@@ -1,4 +1,5 @@
 const jobModel = require('../models/job.model');
+const jobAppModel = require('../models/job_application.model');
 const { ObjectId } = require('mongoose').mongo;
 const { STATUS_SUCCESS, STATUS_ERROR } = require('../common/constants');
 
@@ -176,6 +177,25 @@ function unpublish(req, res, next) {
     });
 }
 
+function getJobApps(req, res, next) {
+    jobAppModel.find({
+        job_id: ObjectId(req.params.job_id),
+    }).sort({
+        _id: -1
+    }).exec((err, docs) => {
+        if (err) {
+            next(err);
+        } else {
+            res.json({
+                status: STATUS_SUCCESS,
+                payload: {
+                    applications: docs,
+                }
+            });
+        }
+    })
+}
+
 module.exports = {
     create: createJob,
     addDescription,
@@ -185,4 +205,5 @@ module.exports = {
     getInfo,
     publish,
     unpublish,
+    getJobApps,
 };
