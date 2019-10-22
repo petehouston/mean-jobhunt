@@ -39,7 +39,7 @@ export class LoginPageComponent implements OnInit {
       .pipe(first())
       .subscribe(user => {
         if (user) {
-          this.router.navigate(['/', 'my-jobs']);
+          this.router.navigate(['/u/jobs']);
         }
       }, err => {
         this.error = err.statusText;
