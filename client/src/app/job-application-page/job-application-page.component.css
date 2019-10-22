@@ -1,0 +1,15 @@
+.text-label {
+  font-size: 20px;
+}
+
+.badge {
+  padding: 10px 15px;
+}
+
+.btn-round {
+  border-radius: 500px;
+}
+
+.btn-w-350 {
+  width: 350px;
+}

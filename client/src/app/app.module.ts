@@ -22,6 +22,7 @@ import {UserEditJobPageComponent} from './user-edit-job-page/user-edit-job-page.
 import {TruncatePipe} from "./pipes/truncate.pipe";
 import {TimeAgoPipe} from "time-ago-pipe";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { JobApplicationPageComponent } from './job-application-page/job-application-page.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     JobTypePipe,
     SalaryRangePipe,
     TruncatePipe,
-    TimeAgoPipe, // `time-ago-pipe`
+    TimeAgoPipe,
+    JobApplicationPageComponent, // `time-ago-pipe`
   ],
   imports: [
     BrowserModule,

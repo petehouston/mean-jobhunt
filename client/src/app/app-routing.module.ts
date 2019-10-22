@@ -12,6 +12,7 @@ import {UserMyJobsPageComponent} from "./user-my-jobs-page/user-my-jobs-page.com
 import {UserJobInfoPageComponent} from "./user-job-info-page/user-job-info-page.component";
 import {UserProfilePageComponent} from "./user-profile-page/user-profile-page.component";
 import {UserEditJobPageComponent} from "./user-edit-job-page/user-edit-job-page.component";
+import {JobApplicationPageComponent} from "./job-application-page/job-application-page.component";
 
 const routes: Routes = [
   // { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterPageComponent},
   {path: 'jobs', component: JobListingPageComponent},
   {path: 'jobs/:job_id', component: JobDetailPageComponent},
+  {path: 'jobs/:job_id/apply', component: JobApplicationPageComponent},
 
   {
     path: 'u/jobs', component: UserMyJobsPageComponent,
