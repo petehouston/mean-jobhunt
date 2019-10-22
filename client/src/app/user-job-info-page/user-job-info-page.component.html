@@ -3,7 +3,11 @@
     <div class="col-md-12">
       <a [routerLink]="['/u/jobs']" class="mb-5">< Back to Jobs</a>
 
-      <h1>Job Information</h1>
+      <h2><small>Position</small>
+        <span class="text-primary mx-3">{{job.title}}</span>
+         <small>at</small>
+        <span class="text-info mx-3">{{job.company}}</span>
+      </h2>
       <hr>
     </div>
   </div>
@@ -30,13 +34,17 @@
           </dl>
 
           <dl class="row">
-            <dt class="col-md-2">Title</dt>
-            <dd class="col-md-10">{{job.title}}</dd>
+            <dt class="col-md-2">Position</dt>
+            <dd class="col-md-10 text-primary">
+              <span class="text-medium"><strong>{{job.title}}</strong></span>
+            </dd>
           </dl>
 
           <dl class="row">
             <dt class="col-md-2">Company</dt>
-            <dd class="col-md-10">{{job.company}}</dd>
+            <dd class="col-md-10 text-info">
+              <span class="text-medium"><strong>{{job.company}}</strong></span>
+            </dd>
           </dl>
 
           <dl class="row">
@@ -61,7 +69,12 @@
 
           <dl class="row">
             <dt class="col-md-2">Salary</dt>
-            <dd class="col-md-10">{{job.salary_range | salary_range}}</dd>
+            <dd class="col-md-10">
+              <span class="badge badge-danger text-medium px-3 py-2">
+              {{job.salary_range | salary_range}}
+                </span>
+
+            </dd>
           </dl>
 
           <dl class="row">
