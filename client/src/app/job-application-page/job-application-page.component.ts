@@ -51,7 +51,6 @@ export class JobApplicationPageComponent implements OnInit {
   onFileChange(e) {
     this.lblResume.nativeElement.innerText = this.f.resume.value;
 
-    const reader = new FileReader();
     if(e.target.files && e.target.files.length) {
       const [file] = e.target.files;
 
