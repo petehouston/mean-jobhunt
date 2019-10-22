@@ -1,4 +1,8 @@
 <div class="container mt-5">
+  <a [routerLink]="['/jobs']" class="btn btn-outline-dark mr-5">< Back to Job List</a>
+</div>
+
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -51,7 +55,7 @@
         </div>
         <div class="card-body">
           <div class="card-text">
-            {{ job.description}}
+            <div [innerHTML]="job.description"></div>
           </div>
         </div>
       </div>
@@ -68,10 +72,18 @@
         </div>
         <div class="card-body">
           <div class="card-text">
-            {{ job.requirement}}
+            <div [innerHTML]="job.requirement"></div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12 align-self-center text-center">
+      <button class=" align-middle btn btn-round btn-w-350 btn-danger btn-lg text-uppercase"><strong><fa-icon [icon]="faHandPointRight"></fa-icon> Apply Now</strong></button>
     </div>
   </div>
 </div>

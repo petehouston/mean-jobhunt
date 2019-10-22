@@ -9,3 +9,7 @@
 .btn-round {
   border-radius: 500px;
 }
+
+.btn-w-350 {
+  width: 350px;
+}
