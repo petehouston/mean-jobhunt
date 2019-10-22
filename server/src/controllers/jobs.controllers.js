@@ -21,10 +21,31 @@ function getInfo(req, res, next) {
     });
 }
 
-function latest(req, res, next) {
+function getByLatest(req, res, next) {
     jobModel.find({})
         .sort({ created_at : -1, _id: -1 })
-        .limit(2)
+        .limit(10)
+        .exec((err, docs) => {
+            if (err) {
+                next(err);
+            } else {
+                res.json({
+                    status: STATUS_SUCCESS,
+                    payload: {
+                        jobs: docs,
+                    }
+                })
+            }
+        });
+}
+
+function getByVisaSponsor(req, res, next) {
+    jobModel.find({
+        visa_sponsor: true
+    }).sort({
+        _id: -1,
+        created_at: -1,
+    }).limit(10)
         .exec((err, docs) => {
             if (err) {
                 next(err);
@@ -41,5 +62,6 @@ function latest(req, res, next) {
 
 module.exports = {
     get: getInfo,
-    getByLatest: latest,
+    getByLatest,
+    getByVisaSponsor,
 };
