@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    basepath: `http://localhost:4000`,
+    basepath: `http://localhost:3000`,
     routes: {
       'auth': {
         login: 'login',
